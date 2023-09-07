@@ -532,8 +532,6 @@ absl::Status CannotAlterColumnDataTypeWithDependentStoredGeneratedColumn(
     absl::string_view column_name);
 absl::Status CannotUseCommitTimestampOnGeneratedColumnDependency(
     absl::string_view column_name);
-absl::Status CannotUseGeneratedColumnInPrimaryKey(
-    absl::string_view table_name, absl::string_view column_name);
 absl::Status CannotWriteToGeneratedColumn(absl::string_view table_name,
                                           absl::string_view column_name);
 absl::Status NonDeterministicFunctionInColumnExpression(

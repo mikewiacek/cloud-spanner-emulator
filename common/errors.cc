@@ -2105,15 +2105,6 @@ absl::Status CannotUseCommitTimestampOnGeneratedColumnDependency(
                        column_name));
 }
 
-absl::Status CannotUseGeneratedColumnInPrimaryKey(
-    absl::string_view table_name, absl::string_view column_name) {
-  return absl::Status(
-      absl::StatusCode::kInvalidArgument,
-      absl::Substitute("Generated column `$0.$1` cannot be part of the "
-                       "primary key.",
-                       table_name, column_name));
-}
-
 absl::Status CannotWriteToGeneratedColumn(absl::string_view table_name,
                                           absl::string_view column_name) {
   return absl::Status(

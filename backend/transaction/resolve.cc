@@ -166,7 +166,7 @@ absl::StatusOr<std::vector<std::optional<int>>> ExtractPrimaryKeyIndices(
     }
     // Reached end of columns list, so this key_column was not found.
     if (i == columns.size()) {
-      if (key_column->column()->is_nullable()) {
+      if (key_column->column()->is_nullable() || key_column->column()->is_generated()) {
         key_indices.push_back(std::nullopt);
       } else {
         return error::NullValueForNotNullColumn(
